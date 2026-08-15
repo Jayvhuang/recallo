@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anki Workload Calculator — How Many Reviews per Day Will N New Cards Cost? | Recallo</title>
+<meta name="description" content="Simulate the daily review load created by adding N new flashcards per day. Card-by-card FSRS-5 simulation reports steady-state reviews per day, minutes per day and the queue growth curve. Free and bilingual.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://recallo.com/tools/review-workload.html">
+<link rel="alternate" hreflang="en" href="https://recallo.com/tools/review-workload.html">
+<link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/review-workload.html">
+<link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/review-workload.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Recallo">
+<meta property="og:title" content="Daily review workload simulator — Recallo">
+<meta property="og:description" content="Simulate the daily review load created by adding N new flashcards per day. Card-by-card FSRS-5 simulation reports steady-state reviews per day, minutes per day and the queue growth curve. Free and bilingual.">
+<meta property="og:url" content="https://recallo.com/tools/review-workload.html">
+<meta property="og:image" content="https://recallo.com/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Daily review workload simulator — Recallo">
+<meta name="twitter:description" content="Simulate the daily review load created by adding N new flashcards per day. Card-by-card FSRS-5 simulation reports steady-state reviews per day, minutes per day and the queue growth curve. Free and bilingual.">
+<meta name="twitter:image" content="https://recallo.com/og-image.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense (Auto ads). Uncomment and replace the publisher ID only after the site is approved.
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","@id":"https://recallo.com/tools/review-workload.html#app","name":"Daily review workload simulator","url":"https://recallo.com/tools/review-workload.html",
+ "applicationCategory":"EducationalApplication","operatingSystem":"Any browser",
+ "description":"Simulate the daily review load created by adding N new flashcards per day. Card-by-card FSRS-5 simulation reports steady-state reviews per day, minutes per day and the queue growth curve. Free and bilingual.","inLanguage":["en","zh-CN"],
+ "isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+ "publisher":{"@type":"Organization","name":"Recallo","url":"https://recallo.com/"}},
+{"@type":"BreadcrumbList","@id":"https://recallo.com/tools/review-workload.html#crumbs","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Recallo","item":"https://recallo.com/"},
+ {"@type":"ListItem","position":2,"name":"Tools","item":"https://recallo.com/#tools"},
+ {"@type":"ListItem","position":3,"name":"Daily review workload simulator","item":"https://recallo.com/tools/review-workload.html"}]},
+{"@type":"FAQPage","@id":"https://recallo.com/tools/review-workload.html#faq","mainEntity":[
+  {"@type":"Question","name":"How many new cards a day can most people sustain?","acceptedAnswer":{"@type":"Answer","text":"There is no universal number, and anyone quoting one is guessing — it depends on your accuracy, your desired retention and how many seconds a review takes you. What is general is the shape: the load keeps climbing for months, so judge a new-card setting by its steady-state minutes per day, never by the first week."}},
+  {"@type":"Question","name":"Why does the curve keep rising for months?","acceptedAnswer":{"@type":"Answer","text":"Because intervals grow but never stop generating reviews. A card added today will come back this week, this month, and next quarter; the queue only stops growing once early cards’ intervals exceed the simulation horizon. Extend the horizon and the plateau moves later and higher."}},
+  {"@type":"Question","name":"Should I trust the minutes-per-day figure?","acceptedAnswer":{"@type":"Answer","text":"Only as far as your seconds-per-review input is honest. That number is yours, not ours: time a real session, divide, and enter it. Language cards often run 5–8 seconds, dense cloze cards much longer, and the difference decides whether a plan is comfortable or abandoned."}}]}]}
+</script>
+</head>
+<body data-tool="review-workload">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="../index.html" aria-label="Recallo home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 22c6-14 18-14 24 0" fill="none" stroke="#3b4fd8" stroke-width="2.6" stroke-linecap="round"/><circle cx="9" cy="24" r="3" fill="#6a5cf0"/><circle cx="16" cy="15.6" r="3" fill="#3b4fd8"/><circle cx="23" cy="24" r="3" fill="#6a5cf0"/></svg>
+      <span>Recall<i>o</i></span>
+    </a>
+    <nav class="top">
+      <a href="review-workload.html"><span data-en>Workload</span><span data-zh>复习负荷</span></a>
+      <a href="fsrs-scheduler.html"><span data-en>FSRS</span><span data-zh>FSRS</span></a>
+      <a href="exam-planner.html"><span data-en>Exam plan</span><span data-zh>考期规划</span></a>
+      <a href="../learn/index.html"><span data-en>Learn</span><span data-zh>学习科学</span></a>
+      <a href="../about.html"><span data-en>About</span><span data-zh>关于</span></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-set="en" aria-pressed="true">EN</button>
+        <button type="button" data-set="zh" aria-pressed="false">中文</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Recallo</a> ›
+    <span data-en>Tools</span><span data-zh>工具</span> ›
+    <span data-en>Daily review workload simulator</span><span data-zh>每日复习负荷模拟器</span>
+  </nav>
+
+  <section class="hero tool">
+    <h1><span data-en>Daily review workload simulator</span><span data-zh>每日复习负荷模拟器</span></h1>
+    <p class="lede"><span data-en>Twenty new cards a day sounds small. It is not twenty reviews a day — it compounds into a queue several times larger, and the queue keeps growing for months before it levels off. This simulates every card individually so you can pick a number you can keep.</span><span data-zh>每天 20 张新卡听起来很少。但它不等于每天 20 次复习——它会累积成好几倍大的队列，而且要好几个月才趋于平稳。这里逐卡模拟，帮你选一个"能一直坚持"的数字。</span></p>
+  </section>
+
+  <section>
+    <div id="bench-host"></div>
+    <noscript>
+      <div class="flag warn">This calculator needs JavaScript, because all the maths runs locally in your browser instead of on a server. 本计算器需要 JavaScript：所有计算都在你的浏览器本地完成，而非服务器。</div>
+    </noscript>
+  </section>
+
+  <section>
+    <h2><span data-en>How this works</span><span data-zh>它的原理</span></h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+      <div class="card">
+        <h3><span data-en>Your queue is an accumulation, not a rate</span><span data-zh>队列是累积量，不是速率</span></h3>
+        <p><span data-en>Each new card generates a whole future sequence of reviews. Add cards at a constant rate and today’s queue is the sum of every past card that happens to be due today. The steady state arrives only when the oldest cards’ intervals grow longer than the horizon you care about.</span><span data-zh>每张新卡都会生成一整条未来的复习序列。以恒定速率加卡，今天的队列就是"所有过去的卡里恰好今天到期"的那些之和。只有当最老的卡的间隔超过你关心的时间跨度，负荷才真正进入稳态。</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-en>Simulated, not multiplied by a rule of thumb</span><span data-zh>逐卡模拟，而非乘一个经验系数</span></h3>
+        <p><span data-en>Recallo runs each card through the same FSRS-5 state machine the scheduler uses, day by day, including lapses at the accuracy you specify. You get the queue curve and the steady-state figure, not a single fudge factor.</span><span data-zh>Recallo 让每张卡都走一遍排程器所用的 FSRS-5 状态机，逐日推进，并按你设定的正确率注入遗忘。你得到的是队列曲线和稳态数值，而不是一个拍脑袋的系数。</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-en>Accuracy is the hidden lever</span><span data-zh>正确率是隐藏的杠杆</span></h3>
+        <p><span data-en>Lapses are expensive twice: the failed review itself, and the shortened intervals that follow it. Drop your assumed accuracy by ten points and watch the steady-state load move — often more than changing the new-card count by the same proportion.</span><span data-zh>遗忘的代价是双份的：一次失败的复习本身，加上之后被压短的一串间隔。把假定正确率下调十个百分点，看稳态负荷怎么动——通常比同比例改新卡数的影响更大。</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span data-en>Questions</span><span data-zh>常见问题</span></h2>
+    <details class="faq">
+      <summary><span data-en>How many new cards a day can most people sustain?</span><span data-zh>大多数人每天能坚持多少张新卡？</span></summary>
+      <p><span data-en>There is no universal number, and anyone quoting one is guessing — it depends on your accuracy, your desired retention and how many seconds a review takes you. What is general is the shape: the load keeps climbing for months, so judge a new-card setting by its steady-state minutes per day, never by the first week.</span><span data-zh>没有一个普适数字，报出具体数字的人都是在猜——它取决于你的正确率、目标记得率以及每次复习花几秒。真正普适的是形状：负荷会持续攀升数月，所以要用稳态的"每天多少分钟"来判断新卡设置，绝不能只看第一周。</span></p>
+    </details>
+    <details class="faq">
+      <summary><span data-en>Why does the curve keep rising for months?</span><span data-zh>为什么曲线要涨好几个月？</span></summary>
+      <p><span data-en>Because intervals grow but never stop generating reviews. A card added today will come back this week, this month, and next quarter; the queue only stops growing once early cards’ intervals exceed the simulation horizon. Extend the horizon and the plateau moves later and higher.</span><span data-zh>因为间隔会变长，但永远不会停止产生复习。今天加的卡这周会回来、这个月会回来、下个季度还会回来；只有当早期卡的间隔超过模拟跨度，队列才停止增长。把跨度拉长，平台期就会更晚、更高。</span></p>
+    </details>
+    <details class="faq">
+      <summary><span data-en>Should I trust the minutes-per-day figure?</span><span data-zh>"每天多少分钟"这个数字可信吗？</span></summary>
+      <p><span data-en>Only as far as your seconds-per-review input is honest. That number is yours, not ours: time a real session, divide, and enter it. Language cards often run 5–8 seconds, dense cloze cards much longer, and the difference decides whether a plan is comfortable or abandoned.</span><span data-zh>它的可信度完全取决于你填的"每次复习几秒"。这个数只能由你提供：给真实的一次复习计时，除一下再填进来。语言类卡常在 5–8 秒，密集填空卡则长得多，而这个差别决定了计划是舒服还是被放弃。</span></p>
+    </details>
+  </section>
+
+  <section>
+    <h2><span data-en>Sources</span><span data-zh>来源</span></h2>
+    <p class="sub"><span data-en>Every algorithm and figure on this page is traceable to the references below. Where evidence is weak or contested, the page says so instead of rounding it up.</span><span data-zh>本页涉及的算法与数字，均可追溯到以下文献。凡证据薄弱或存在争议之处，页面会直接说明，而不是含糊带过。</span></p>
+    <ul class="refs">
+      <li><a href="https://github.com/open-spaced-repetition/fsrs4anki/wiki/The-Algorithm" target="_blank" rel="noopener">Open Spaced Repetition — <i>The FSRS algorithm</i></a>: FSRS-5 equations for stability, difficulty and retrievability, plus the published default parameter set.</li>
+      <li><a href="https://docs.ankiweb.net/deck-options.html#fsrs" target="_blank" rel="noopener">Anki manual — FSRS deck options</a>: source of the 0.90 desired-retention default and the meaning of each grade button.</li>
+      <li><a href="https://github.com/open-spaced-repetition/ts-fsrs" target="_blank" rel="noopener">ts-fsrs</a> (MIT): reference TypeScript implementation whose default weights Recallo reproduces digit for digit.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span data-en>Related tools</span><span data-zh>相关工具</span></h2>
+    <ul class="rel">
+      <li><a href="fsrs-scheduler.html"><span data-en>FSRS interval scheduler</span><span data-zh>FSRS 间隔排程器</span></a></li>
+      <li><a href="retention-optimizer.html"><span data-en>Desired-retention optimiser</span><span data-zh>目标记得率优化器</span></a></li>
+      <li><a href="exam-planner.html"><span data-en>Exam-date feasibility planner</span><span data-zh>考期可行性规划器</span></a></li>
+    </ul>
+  </section>
+
+</div>
+</main>
+<footer class="site">
+  <div class="wrap foot">
+    <div>
+      <h4>Recallo</h4>
+      <p><span data-en>Free study-planning calculators built on published memory-scheduling algorithms. Independent project, no account required, no analytics.</span>
+      <span data-zh>基于公开记忆排程算法的免费学习规划计算器。独立项目，无需注册，不做统计追踪。</span></p>
+    </div>
+    <div>
+      <h4><span data-en>Tools</span><span data-zh>工具</span></h4>
+      <ul>
+        <li><a href="fsrs-scheduler.html">FSRS interval scheduler</a></li>
+        <li><a href="review-workload.html">Review workload simulator</a></li>
+        <li><a href="retention-optimizer.html">Retention optimiser</a></li>
+        <li><a href="exam-planner.html">Exam feasibility planner</a></li>
+        <li><a href="forgetting-curve.html">Forgetting-curve plotter</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4><span data-en>More</span><span data-zh>更多</span></h4>
+      <ul>
+        <li><a href="cram-vs-spaced.html">Cram vs spaced</a></li>
+        <li><a href="sm2-scheduler.html">SM-2 calculator</a></li>
+        <li><a href="../learn/index.html"><span data-en>Learn</span><span data-zh>学习科学</span></a></li>
+        <li><a href="../about.html"><span data-en>About &amp; method</span><span data-zh>关于与方法</span></a></li>
+        <li><a href="../privacy.html"><span data-en>Privacy</span><span data-zh>隐私政策</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap disclose">
+    <p><span data-en><b>Educational tool.</b> Recallo models published scheduling algorithms; it is not medical, psychological or academic advice, and its outputs are estimates from a model rather than measurements of your memory.</span>
+    <span data-zh><b>教育用途工具。</b>Recallo 实现的是公开排程算法，不构成医学、心理或学业建议；输出是模型估算，而非对你记忆的测量。</span></p>
+    <p><span data-en>As an Amazon Associate, Recallo earns from qualifying purchases. Affiliate links, where present, are marked and never change a calculation.</span>
+    <span data-zh>作为 Amazon Associate，Recallo 可从符合条件的购买中获得佣金。若页面出现联盟链接，均会标注，且绝不影响任何计算结果。</span></p>
+    <p><span data-en><a href="https://www.amazon.com/s?k=study+planner+flashcards&tag=recallo-20" rel="sponsored nofollow noopener" target="_blank">Find study planners &amp; flashcards on Amazon</a> (Amazon Associate link — does not affect your price).</span>
+    <span data-zh><a href="https://www.amazon.com/s?k=study+planner+flashcards&tag=recallo-20" rel="sponsored nofollow noopener" target="_blank">在 Amazon 上找学习计划本与记忆卡</a>（Amazon Associate 链接——不影响你的价格）。</span></p>
+    <p>© 2026 Recallo · <a href="../privacy.html"><span data-en>Privacy</span><span data-zh>隐私政策</span></a> · <a href="../about.html"><span data-en>About</span><span data-zh>关于</span></a></p>
+  </div>
+</footer>
+
+<script src="../engine.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>
