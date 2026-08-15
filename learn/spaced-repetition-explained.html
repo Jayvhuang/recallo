@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Spaced Repetition Works — Stability, Difficulty, Retrievability | Recallo</title>
+<meta name="description" content="A plain-language walkthrough of the three numbers modern schedulers track, why intervals grow, and what a lapse actually costs. With the equations and the sources.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://recallo.com/learn/spaced-repetition-explained.html">
+<link rel="alternate" hreflang="en" href="https://recallo.com/learn/spaced-repetition-explained.html">
+<link rel="alternate" hreflang="zh-CN" href="https://recallo.com/learn/spaced-repetition-explained.html">
+<link rel="alternate" hreflang="x-default" href="https://recallo.com/learn/spaced-repetition-explained.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Recallo">
+<meta property="og:title" content="Spaced repetition, explained by the numbers — Recallo">
+<meta property="og:description" content="A plain-language walkthrough of the three numbers modern schedulers track, why intervals grow, and what a lapse actually costs. With the equations and the sources.">
+<meta property="og:url" content="https://recallo.com/learn/spaced-repetition-explained.html">
+<meta property="og:image" content="https://recallo.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Spaced repetition, explained by the numbers — Recallo">
+<meta name="twitter:description" content="A plain-language walkthrough of the three numbers modern schedulers track, why intervals grow, and what a lapse actually costs. With the equations and the sources.">
+<meta name="twitter:image" content="https://recallo.com/og-image.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense (Auto ads). Uncomment and replace the publisher ID only after the site is approved.
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","@id":"https://recallo.com/learn/spaced-repetition-explained.html#article","headline":"Spaced repetition, explained by the numbers","description":"A plain-language walkthrough of the three numbers modern schedulers track, why intervals grow, and what a lapse actually costs. With the equations and the sources.",
+ "url":"https://recallo.com/learn/spaced-repetition-explained.html","inLanguage":["en","zh-CN"],"isAccessibleForFree":true,
+ "author":{"@type":"Organization","name":"Recallo","url":"https://recallo.com/"},
+ "publisher":{"@type":"Organization","name":"Recallo","url":"https://recallo.com/"},
+ "mainEntityOfPage":{"@type":"WebPage","@id":"https://recallo.com/learn/spaced-repetition-explained.html"}},
+{"@type":"BreadcrumbList","@id":"https://recallo.com/learn/spaced-repetition-explained.html#crumbs","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Recallo","item":"https://recallo.com/"},
+ {"@type":"ListItem","position":2,"name":"Learn","item":"https://recallo.com/learn/index.html"},
+ {"@type":"ListItem","position":3,"name":"Spaced repetition, explained by the numbers","item":"https://recallo.com/learn/spaced-repetition-explained.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="../index.html" aria-label="Recallo home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 22c6-14 18-14 24 0" fill="none" stroke="#3b4fd8" stroke-width="2.6" stroke-linecap="round"/><circle cx="9" cy="24" r="3" fill="#6a5cf0"/><circle cx="16" cy="15.6" r="3" fill="#3b4fd8"/><circle cx="23" cy="24" r="3" fill="#6a5cf0"/></svg>
+      <span>Recall<i>o</i></span>
+    </a>
+    <nav class="top">
+      <a href="../tools/review-workload.html"><span data-en>Workload</span><span data-zh>复习负荷</span></a>
+      <a href="../tools/fsrs-scheduler.html"><span data-en>FSRS</span><span data-zh>FSRS</span></a>
+      <a href="../tools/exam-planner.html"><span data-en>Exam plan</span><span data-zh>考期规划</span></a>
+      <a href="index.html"><span data-en>Learn</span><span data-zh>学习科学</span></a>
+      <a href="../about.html"><span data-en>About</span><span data-zh>关于</span></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-set="en" aria-pressed="true">EN</button>
+        <button type="button" data-set="zh" aria-pressed="false">中文</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap narrow">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Recallo</a> ›
+    <a href="index.html"><span data-en>Learn</span><span data-zh>学习科学</span></a> ›
+    <span data-en>Spaced repetition, explained by the numbers</span><span data-zh>用数字讲清间隔复习</span>
+  </nav>
+
+  <article>
+  <header class="hero tool">
+    <p class="kicker"><span data-en>Foundations · 8 min read</span><span data-zh>基础 · 约 8 分钟</span></p>
+    <h1><span data-en>Spaced repetition, explained by the numbers</span><span data-zh>用数字讲清间隔复习</span></h1>
+    <p class="lede"><span data-en>Every flashcard app hides the same three numbers. Once you can read them, scheduling stops being magic and becomes arithmetic you can argue with.</span><span data-zh>每个抽认卡应用背后都是同样的三个数字。一旦你会读它们，排程就不再是魔法，而变成你可以质疑的算术。</span></p>
+  </header>
+
+  <section class="prose">
+    <h2><span data-en>The problem spacing solves</span><span data-zh>间隔复习解决的问题</span></h2>
+    <p><span data-en>Re-reading a page five times in one sitting feels productive and mostly is not. Each repetition arrives while the material is still fully available, so there is nothing to retrieve and little to strengthen. Spacing works by letting memory decay <i>a little</i> before you come back, so the act of remembering is effortful — and effortful successful retrieval is what durably strengthens a memory.</span><span data-zh>一口气把一页读五遍，感觉很有产出，实际上大多没有。每一次重复到来时材料都还完整地在手边，于是没有什么需要提取，也就没什么被加固。间隔复习的做法是：让记忆先<i>轻微</i>衰减再回来，使"想起来"这件事变得费力——而费力却成功的提取，才是真正持久地加固记忆的东西。</span></p>
+    <h2><span data-en>Three numbers describe a card</span><span data-zh>三个数字描述一张卡</span></h2>
+    <p><span data-en>Modern schedulers such as FSRS keep <b>stability</b> S — how many days until recall of this card falls to 90% — plus <b>difficulty</b> D on a 1–10 scale, and <b>retrievability</b> R, the probability you could recall it right now. S and D are updated by your grades. R is not stored at all: it is computed from how long it has been and how stable the card is.</span><span data-zh>像 FSRS 这样的现代排程器为每张卡维护：<b>稳定度</b> S——多少天后这张卡的记得率降到 90%；<b>难度</b> D——1 到 10 的标度；以及<b>可提取性</b> R——你此刻还能回忆起来的概率。S 与 D 由你的评分更新，R 根本不需要存储：它由"过了多久"和"卡有多稳定"算出来。</span></p>
+    <h2><span data-en>The equation you can actually use</span><span data-zh>一个你真的用得上的公式</span></h2>
+    <p><span data-en>Recall decays as <code>R(t, S) = (1 + 19/81 · t/S)^−0.5</code>, where t is days since the last review. Two consequences follow immediately. First, S only stretches the time axis — doubling stability doubles how long any recall level takes to arrive, it does not lift the curve. Second, if you fix R at a target and solve for t, you get the next interval. That is the whole scheduling loop: grade the card, update S, solve for the day R hits your target.</span><span data-zh>记忆按 <code>R(t, S) = (1 + 19/81 · t/S)^−0.5</code> 衰减，其中 t 是距上次复习的天数。由此立刻得到两个结论。第一，S 只是拉伸时间轴——稳定度翻倍，只会让任一记得率水平"晚一倍才到达"，并不会把曲线抬高。第二，把 R 固定在目标值再反解 t，就得到下一次间隔。整个排程循环就是这样：给卡评分、更新 S、解出"R 落到目标"的那一天。</span></p>
+    <h2><span data-en>Why intervals grow, and when they stop</span><span data-zh>间隔为何增长，又何时停下</span></h2>
+    <p><span data-en>Each successful review multiplies stability, and the multiplier is largest when you review a card whose recall has already dropped somewhat — reviewing something you still know perfectly buys very little. This is why intervals grow quickly at first and then settle. It is also why "just review everything daily" is not the safe choice it feels like: it spends your time where the purchase is smallest.</span><span data-zh>每一次成功复习都会把稳定度乘上去，而当你复习的是"记得率已经掉了一些"的卡时，这个乘数最大——去复习一件你还记得滚瓜烂熟的东西，几乎买不到什么。这就是间隔为什么先猛涨、后趋缓。这也解释了为什么"干脆每天都全部复习一遍"并不是感觉上那种安全选择：它把时间花在了收益最小的地方。</span></p>
+    <h2><span data-en>A lapse is not a reset — in FSRS</span><span data-zh>在 FSRS 里，遗忘不等于清零</span></h2>
+    <p><span data-en>The classic SM-2 algorithm sends a failed card back to a one-day interval regardless of how long it had survived. FSRS instead computes a post-lapse stability from the stability you had already accumulated, so a mature card that slips resumes from a lower but non-zero base. If you have ever felt punished for one bad day, that difference is why.</span><span data-zh>经典的 SM-2 算法会把答错的卡打回 1 天间隔，不管它此前存活了多久。FSRS 则依据你已累积的稳定度计算"遗忘后稳定度"，因此一张成熟卡失手一次，会从更低但非零的基线继续。如果你曾经觉得"一天没做好就被重罚"，差别就在这里。</span></p>
+    <h2><span data-en>What this does not tell you</span><span data-zh>它没告诉你的事</span></h2>
+    <p><span data-en>These models describe retrieval of discrete items you have already understood. They say nothing about whether your cards are any good, and a scheduler cannot rescue a card that asks an ambiguous question. They also do not describe procedural skills — an instrument, a sport, pronunciation — which decay differently and usually far more slowly.</span><span data-zh>这些模型描述的是"你已经理解了的离散条目的提取"。它们完全不涉及你的卡片质量好不好，而排程器救不了一张问题本身有歧义的卡。它们也不描述程序性技能——乐器、运动、发音——这些的衰减方式不同，而且通常慢得多。</span></p>
+  </section>
+
+  <section>
+    <h2><span data-en>Run the numbers</span><span data-zh>把数字跑一遍</span></h2>
+    <ul class="rel">
+      <li><a href="../tools/fsrs-scheduler.html"><span data-en>Replay a card grade by grade</span><span data-zh>逐次评分重放一张卡</span></a></li>
+      <li><a href="../tools/forgetting-curve.html"><span data-en>Plot the decay for any stability</span><span data-zh>为任意稳定度绘制衰减曲线</span></a></li>
+      <li><a href="../tools/sm2-scheduler.html"><span data-en>Compare with the 1987 algorithm</span><span data-zh>与 1987 年的算法对比</span></a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span data-en>Sources</span><span data-zh>来源</span></h2>
+    <ul class="refs">
+      <li><a href="https://github.com/open-spaced-repetition/fsrs4anki/wiki/The-Algorithm" target="_blank" rel="noopener">Open Spaced Repetition — <i>The FSRS algorithm</i></a>: FSRS-5 equations for stability, difficulty and retrievability, plus the published default parameter set.</li>
+      <li><a href="https://github.com/open-spaced-repetition/ts-fsrs" target="_blank" rel="noopener">ts-fsrs</a> (MIT): reference TypeScript implementation whose default weights Recallo reproduces digit for digit.</li>
+      <li>Murre, J. M. J., &amp; Dros, J. (2015). Replication and analysis of Ebbinghaus’ forgetting curve. <i>PLoS ONE</i>, 10(7), e0120644. <a href="https://doi.org/10.1371/journal.pone.0120644" target="_blank" rel="noopener">doi:10.1371/journal.pone.0120644</a></li>
+      <li>Roediger, H. L., &amp; Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. <i>Psychological Science</i>, 17(3), 249–255. <a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x" target="_blank" rel="noopener">doi:10.1111/j.1467-9280.2006.01693.x</a></li>
+    </ul>
+  </section>
+  </article>
+
+</div>
+</main>
+<footer class="site">
+  <div class="wrap foot">
+    <div>
+      <h4>Recallo</h4>
+      <p><span data-en>Free study-planning calculators built on published memory-scheduling algorithms. Independent project, no account required, no analytics.</span>
+      <span data-zh>基于公开记忆排程算法的免费学习规划计算器。独立项目，无需注册，不做统计追踪。</span></p>
+    </div>
+    <div>
+      <h4><span data-en>Tools</span><span data-zh>工具</span></h4>
+      <ul>
+        <li><a href="../tools/fsrs-scheduler.html">FSRS interval scheduler</a></li>
+        <li><a href="../tools/review-workload.html">Review workload simulator</a></li>
+        <li><a href="../tools/retention-optimizer.html">Retention optimiser</a></li>
+        <li><a href="../tools/exam-planner.html">Exam feasibility planner</a></li>
+        <li><a href="../tools/forgetting-curve.html">Forgetting-curve plotter</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4><span data-en>More</span><span data-zh>更多</span></h4>
+      <ul>
+        <li><a href="../tools/cram-vs-spaced.html">Cram vs spaced</a></li>
+        <li><a href="../tools/sm2-scheduler.html">SM-2 calculator</a></li>
+        <li><a href="index.html"><span data-en>Learn</span><span data-zh>学习科学</span></a></li>
+        <li><a href="../about.html"><span data-en>About &amp; method</span><span data-zh>关于与方法</span></a></li>
+        <li><a href="../privacy.html"><span data-en>Privacy</span><span data-zh>隐私政策</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap disclose">
+    <p><span data-en><b>Educational tool.</b> Recallo models published scheduling algorithms; it is not medical, psychological or academic advice, and its outputs are estimates from a model rather than measurements of your memory.</span>
+    <span data-zh><b>教育用途工具。</b>Recallo 实现的是公开排程算法，不构成医学、心理或学业建议；输出是模型估算，而非对你记忆的测量。</span></p>
+    <p><span data-en>As an Amazon Associate, Recallo earns from qualifying purchases. Affiliate links, where present, are marked and never change a calculation.</span>
+    <span data-zh>作为 Amazon Associate，Recallo 可从符合条件的购买中获得佣金。若页面出现联盟链接，均会标注，且绝不影响任何计算结果。</span></p>
+    <p><span data-en><a href="https://www.amazon.com/s?k=study+planner+flashcards&tag=recallo-20" rel="sponsored nofollow noopener" target="_blank">Find study planners &amp; flashcards on Amazon</a> (Amazon Associate link — does not affect your price).</span>
+    <span data-zh><a href="https://www.amazon.com/s?k=study+planner+flashcards&tag=recallo-20" rel="sponsored nofollow noopener" target="_blank">在 Amazon 上找学习计划本与记忆卡</a>（Amazon Associate 链接——不影响你的价格）。</span></p>
+    <p>© 2026 Recallo · <a href="../privacy.html"><span data-en>Privacy</span><span data-zh>隐私政策</span></a> · <a href="../about.html"><span data-en>About</span><span data-zh>关于</span></a></p>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>
