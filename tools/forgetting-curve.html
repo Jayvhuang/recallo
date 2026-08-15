@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Forgetting Curve Calculator — Plot Recall Decay from Memory Stability | Recallo</title>
+<meta name="description" content="Plot the forgetting curve R(t,S) = (1 + 19/81 · t/S)^−0.5 for any memory stability. Read off recall at any day, find the day recall hits a threshold, and compare several stabilities side by side.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://recallo.com/tools/forgetting-curve.html">
+<link rel="alternate" hreflang="en" href="https://recallo.com/tools/forgetting-curve.html">
+<link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/forgetting-curve.html">
+<link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/forgetting-curve.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Recallo">
+<meta property="og:title" content="Forgetting-curve plotter — Recallo">
+<meta property="og:description" content="Plot the forgetting curve R(t,S) = (1 + 19/81 · t/S)^−0.5 for any memory stability. Read off recall at any day, find the day recall hits a threshold, and compare several stabilities side by side.">
+<meta property="og:url" content="https://recallo.com/tools/forgetting-curve.html">
+<meta property="og:image" content="https://recallo.com/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Forgetting-curve plotter — Recallo">
+<meta name="twitter:description" content="Plot the forgetting curve R(t,S) = (1 + 19/81 · t/S)^−0.5 for any memory stability. Read off recall at any day, find the day recall hits a threshold, and compare several stabilities side by side.">
+<meta name="twitter:image" content="https://recallo.com/og-image.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense (Auto ads). Uncomment and replace the publisher ID only after the site is approved.
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","@id":"https://recallo.com/tools/forgetting-curve.html#app","name":"Forgetting-curve plotter","url":"https://recallo.com/tools/forgetting-curve.html",
+ "applicationCategory":"EducationalApplication","operatingSystem":"Any browser",
+ "description":"Plot the forgetting curve R(t,S) = (1 + 19/81 · t/S)^−0.5 for any memory stability. Read off recall at any day, find the day recall hits a threshold, and compare several stabilities side by side.","inLanguage":["en","zh-CN"],
+ "isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+ "publisher":{"@type":"Organization","name":"Recallo","url":"https://recallo.com/"}},
+{"@type":"BreadcrumbList","@id":"https://recallo.com/tools/forgetting-curve.html#crumbs","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Recallo","item":"https://recallo.com/"},
+ {"@type":"ListItem","position":2,"name":"Tools","item":"https://recallo.com/#tools"},
+ {"@type":"ListItem","position":3,"name":"Forgetting-curve plotter","item":"https://recallo.com/tools/forgetting-curve.html"}]},
+{"@type":"FAQPage","@id":"https://recallo.com/tools/forgetting-curve.html#faq","mainEntity":[
+  {"@type":"Question","name":"Is the forgetting curve exponential or a power function?","acceptedAnswer":{"@type":"Answer","text":"Both have been fitted for over a century, and a power function generally describes the long tail better than a single exponential. FSRS uses the power form shown here; the practical consequence is that late forgetting is slower than an exponential predicts, so long intervals are less reckless than they feel."}},
+  {"@type":"Question","name":"What stability number should I plug in?","acceptedAnswer":{"@type":"Answer","text":"Take it from a real card: open the FSRS scheduler tool, replay the grade history of a card you actually have, and use the stability it reports. Typing a round number gives you a shape, not a forecast about your own deck."}},
+  {"@type":"Question","name":"Does the curve apply to skills as well as facts?","acceptedAnswer":{"@type":"Answer","text":"This curve describes retrieval of discrete items. Procedural skills — an instrument, a language’s pronunciation, a sport — decay differently and are usually far more durable. Treat the plot as a model of flashcard-shaped knowledge, not of everything you can do."}}]}]}
+</script>
+</head>
+<body data-tool="forgetting-curve">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="../index.html" aria-label="Recallo home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 22c6-14 18-14 24 0" fill="none" stroke="#3b4fd8" stroke-width="2.6" stroke-linecap="round"/><circle cx="9" cy="24" r="3" fill="#6a5cf0"/><circle cx="16" cy="15.6" r="3" fill="#3b4fd8"/><circle cx="23" cy="24" r="3" fill="#6a5cf0"/></svg>
+      <span>Recall<i>o</i></span>
+    </a>
+    <nav class="top">
+      <a href="review-workload.html"><span data-en>Workload</span><span data-zh>复习负荷</span></a>
+      <a href="fsrs-scheduler.html"><span data-en>FSRS</span><span data-zh>FSRS</span></a>
+      <a href="exam-planner.html"><span data-en>Exam plan</span><span data-zh>考期规划</span></a>
+      <a href="../learn/index.html"><span data-en>Learn</span><span data-zh>学习科学</span></a>
+      <a href="../about.html"><span data-en>About</span><span data-zh>关于</span></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-set="en" aria-pressed="true">EN</button>
+        <button type="button" data-set="zh" aria-pressed="false">中文</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Recallo</a> ›
+    <span data-en>Tools</span><span data-zh>工具</span> ›
+    <span data-en>Forgetting-curve plotter</span><span data-zh>遗忘曲线绘图器</span>
+  </nav>
+
+  <section class="hero tool">
+    <h1><span data-en>Forgetting-curve plotter</span><span data-zh>遗忘曲线绘图器</span></h1>
+    <p class="lede"><span data-en>Ebbinghaus drew this curve in 1885 by memorising nonsense syllables and testing himself. Modern schedulers use a power function of time over stability. Give this one a stability and it tells you the recall probability on any day — and the day any threshold is crossed.</span><span data-zh>1885 年，艾宾浩斯靠背无意义音节并自测，画出了这条曲线。现代排程器用"时间/稳定度"的幂函数来描述它。给它一个稳定度，它就能告诉你任意一天的回忆概率，以及跌破任意阈值的那一天。</span></p>
+  </section>
+
+  <section>
+    <div id="bench-host"></div>
+    <noscript>
+      <div class="flag warn">This calculator needs JavaScript, because all the maths runs locally in your browser instead of on a server. 本计算器需要 JavaScript：所有计算都在你的浏览器本地完成，而非服务器。</div>
+    </noscript>
+  </section>
+
+  <section>
+    <h2><span data-en>How this works</span><span data-zh>它的原理</span></h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+      <div class="card">
+        <h3><span data-en>Forgetting is fast, then slow</span><span data-zh>遗忘先快后慢</span></h3>
+        <p><span data-en>The steepest loss happens immediately; the curve then flattens for a long tail. That shape is why one well-timed review beats three reviews crammed into an afternoon — the extra repetitions land where the curve is already flat and buy little.</span><span data-zh>损失最陡的部分发生在最开始，随后曲线拖出长长的平尾。正是这个形状，让"一次时机对的复习"胜过"一个下午挤三次"——多出来的重复落在曲线已经变平的地方，买不到多少东西。</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-en>Stability is the horizontal scale</span><span data-zh>稳定度就是横轴的尺度</span></h3>
+        <p><span data-en>In R(t,S) = (1 + 19/81 · t/S)^−0.5 the only thing S does is stretch the time axis. Doubling stability does not lift the curve; it doubles how long any given recall level takes to arrive. Successful reviews are how you buy that stretch.</span><span data-zh>在 R(t,S) = (1 + 19/81 · t/S)^−0.5 中，S 唯一的作用是拉伸时间轴。稳定度翻倍不会把曲线抬高，而是让任何一个记得率水平"晚一倍才到达"。成功的复习，就是你买到这份拉伸的方式。</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-en>The 1885 curve replicates — with caveats</span><span data-zh>1885 年的曲线可被重复——但有前提</span></h3>
+        <p><span data-en>Murre and Dros repeated Ebbinghaus’s procedure in 2015 and recovered a curve close to his original. The caveat matters: those data are nonsense syllables learned by one or two people. The shape generalises; the exact numbers for your meaningful, cued material do not.</span><span data-zh>Murre 与 Dros 在 2015 年重复了艾宾浩斯的程序，得到与原始结果接近的曲线。但前提很重要：那些数据来自一两个人背无意义音节。可推广的是形状，而不是"你那些有意义、有提示的材料"的具体数值。</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span data-en>Questions</span><span data-zh>常见问题</span></h2>
+    <details class="faq">
+      <summary><span data-en>Is the forgetting curve exponential or a power function?</span><span data-zh>遗忘曲线是指数还是幂函数？</span></summary>
+      <p><span data-en>Both have been fitted for over a century, and a power function generally describes the long tail better than a single exponential. FSRS uses the power form shown here; the practical consequence is that late forgetting is slower than an exponential predicts, so long intervals are less reckless than they feel.</span><span data-zh>一个多世纪以来两者都被拟合过，而幂函数通常比单一指数更好地描述长尾。FSRS 采用本页展示的幂函数形式；实际后果是：后期遗忘比指数预测得更慢，所以长间隔并不像感觉上那么冒险。</span></p>
+    </details>
+    <details class="faq">
+      <summary><span data-en>What stability number should I plug in?</span><span data-zh>稳定度该填多少？</span></summary>
+      <p><span data-en>Take it from a real card: open the FSRS scheduler tool, replay the grade history of a card you actually have, and use the stability it reports. Typing a round number gives you a shape, not a forecast about your own deck.</span><span data-zh>从一张真实的卡里取：打开 FSRS 排程器工具，重放你手上某张卡的评分历史，用它报出的稳定度。随手填个整数只能得到一个形状，而不是对你自己牌组的预测。</span></p>
+    </details>
+    <details class="faq">
+      <summary><span data-en>Does the curve apply to skills as well as facts?</span><span data-zh>这条曲线适用于技能吗？</span></summary>
+      <p><span data-en>This curve describes retrieval of discrete items. Procedural skills — an instrument, a language’s pronunciation, a sport — decay differently and are usually far more durable. Treat the plot as a model of flashcard-shaped knowledge, not of everything you can do.</span><span data-zh>它描述的是"离散条目的提取"。程序性技能——乐器、语言发音、运动——的衰减方式不同，而且通常耐久得多。请把这张图当作"抽认卡型知识"的模型，而不是你所有能力的模型。</span></p>
+    </details>
+  </section>
+
+  <section>
+    <h2><span data-en>Sources</span><span data-zh>来源</span></h2>
+    <p class="sub"><span data-en>Every algorithm and figure on this page is traceable to the references below. Where evidence is weak or contested, the page says so instead of rounding it up.</span><span data-zh>本页涉及的算法与数字，均可追溯到以下文献。凡证据薄弱或存在争议之处，页面会直接说明，而不是含糊带过。</span></p>
+    <ul class="refs">
+      <li>Ebbinghaus, H. (1885). <i>Über das Gedächtnis: Untersuchungen zur experimentellen Psychologie</i>. Leipzig: Duncker &amp; Humblot. — the first quantitative forgetting curve.</li>
+      <li>Murre, J. M. J., &amp; Dros, J. (2015). Replication and analysis of Ebbinghaus’ forgetting curve. <i>PLoS ONE</i>, 10(7), e0120644. <a href="https://doi.org/10.1371/journal.pone.0120644" target="_blank" rel="noopener">doi:10.1371/journal.pone.0120644</a></li>
+      <li><a href="https://github.com/open-spaced-repetition/fsrs4anki/wiki/The-Algorithm" target="_blank" rel="noopener">Open Spaced Repetition — <i>The FSRS algorithm</i></a>: FSRS-5 equations for stability, difficulty and retrievability, plus the published default parameter set.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span data-en>Related tools</span><span data-zh>相关工具</span></h2>
+    <ul class="rel">
+      <li><a href="fsrs-scheduler.html"><span data-en>FSRS interval scheduler</span><span data-zh>FSRS 间隔排程器</span></a></li>
+      <li><a href="cram-vs-spaced.html"><span data-en>Cram vs spaced comparison</span><span data-zh>临时抱佛脚 vs 间隔复习</span></a></li>
+      <li><a href="retention-optimizer.html"><span data-en>Desired-retention optimiser</span><span data-zh>目标记得率优化器</span></a></li>
+    </ul>
+  </section>
+
+</div>
+</main>
+<footer class="site">
+  <div class="wrap foot">
+    <div>
+      <h4>Recallo</h4>
+      <p><span data-en>Free study-planning calculators built on published memory-scheduling algorithms. Independent project, no account required, no analytics.</span>
+      <span data-zh>基于公开记忆排程算法的免费学习规划计算器。独立项目，无需注册，不做统计追踪。</span></p>
+    </div>
+    <div>
+      <h4><span data-en>Tools</span><span data-zh>工具</span></h4>
+      <ul>
+        <li><a href="fsrs-scheduler.html">FSRS interval scheduler</a></li>
+        <li><a href="review-workload.html">Review workload simulator</a></li>
+        <li><a href="retention-optimizer.html">Retention optimiser</a></li>
+        <li><a href="exam-planner.html">Exam feasibility planner</a></li>
+        <li><a href="forgetting-curve.html">Forgetting-curve plotter</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4><span data-en>More</span><span data-zh>更多</span></h4>
+      <ul>
+        <li><a href="cram-vs-spaced.html">Cram vs spaced</a></li>
+        <li><a href="sm2-scheduler.html">SM-2 calculator</a></li>
+        <li><a href="../learn/index.html"><span data-en>Learn</span><span data-zh>学习科学</span></a></li>
+        <li><a href="../about.html"><span data-en>About &amp; method</span><span data-zh>关于与方法</span></a></li>
+        <li><a href="../privacy.html"><span data-en>Privacy</span><span data-zh>隐私政策</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap disclose">
+    <p><span data-en><b>Educational tool.</b> Recallo models published scheduling algorithms; it is not medical, psychological or academic advice, and its outputs are estimates from a model rather than measurements of your memory.</span>
+    <span data-zh><b>教育用途工具。</b>Recallo 实现的是公开排程算法，不构成医学、心理或学业建议；输出是模型估算，而非对你记忆的测量。</span></p>
+    <p><span data-en>As an Amazon Associate, Recallo earns from qualifying purchases. Affiliate links, where present, are marked and never change a calculation.</span>
+    <span data-zh>作为 Amazon Associate，Recallo 可从符合条件的购买中获得佣金。若页面出现联盟链接，均会标注，且绝不影响任何计算结果。</span></p>
+    <p><span data-en><a href="https://www.amazon.com/s?k=study+planner+flashcards&tag=recallo-20" rel="sponsored nofollow noopener" target="_blank">Find study planners &amp; flashcards on Amazon</a> (Amazon Associate link — does not affect your price).</span>
+    <span data-zh><a href="https://www.amazon.com/s?k=study+planner+flashcards&tag=recallo-20" rel="sponsored nofollow noopener" target="_blank">在 Amazon 上找学习计划本与记忆卡</a>（Amazon Associate 链接——不影响你的价格）。</span></p>
+    <p>© 2026 Recallo · <a href="../privacy.html"><span data-en>Privacy</span><span data-zh>隐私政策</span></a> · <a href="../about.html"><span data-en>About</span><span data-zh>关于</span></a></p>
+  </div>
+</footer>
+
+<script src="../engine.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>
