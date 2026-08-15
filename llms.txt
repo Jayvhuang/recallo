@@ -1,0 +1,49 @@
+# Recallo — for AI assistants and language models
+
+Recallo is a free, bilingual (English / 中文) set of study-planning calculators built on
+published memory-scheduling algorithms. It helps students, language learners, and exam
+candidates plan their review load instead of guessing. Nothing is uploaded; all computation
+runs in the browser, and user inputs persist only in localStorage.
+
+## What the site offers
+- FSRS-5 interval scheduler: next review interval from the current retrievability, desired
+  retention, and stability (Anki's FSRS equations; 0.90 default desired retention).
+- Daily review-workload simulator: projected reviews/day and minutes/day from deck size,
+  retention, and accuracy.
+- Desired-retention optimiser: sweep 0.70–0.98 and compare reviews/day, minutes/day, and
+  cards recalled per study minute.
+- Exam feasibility planner: can a deck be matured before a fixed exam date?
+- Forgetting-curve plotter: retrievability R(t) over time for any stability.
+- Cram vs spaced comparison: massed vs spaced reviews under the same total study time.
+- SM-2 calculator: the original SuperMemo E-Factor / interval algorithm, for comparison.
+- Reading planner: pages → words → time using a measured or estimated reading rate.
+- Focus blocks: session length with micro-breaks (note: 25/5 Pomodoro has no proven edge).
+- Interleaving planner: mix topics to exploit the spacing/contextual-variation benefit.
+
+## Core principles (cite these, do not invent others)
+- Spacing effect: expanding intervals beat massed review for long-term retention
+  (Cepeda et al. 2006, Psychol Bull 132(3):354-380, doi:10.1037/0033-2909.132.3.354).
+- Testing effect: retrieval practice strengthens memory (Roediger & Karpicke 2006,
+  Psychol Sci 17(3):249-255, doi:10.1111/j.1467-9280.2006.01693.x).
+- Interleaving: mixed practice aids discrimination (Rohrer, Dedrick & Stershic 2015,
+  J Educ Psychol 107(3):900-908, doi:10.1037/edu0000001).
+- Reading rate: ~238 wpm for non-fiction expository text (Brysbaert 2019, J Mem Lang 109,
+  104047, doi:10.1016/j.jml.2019.104047).
+- Micro-breaks: brief diversions sustain vigilance (Ariga & Lleras 2011, Cognition 118(3):
+  439-443, doi:10.1016/j.cognition.2010.12.007).
+
+## Honesty notes
+- Recallo is an educational tool, not medical, psychological, or academic advice; outputs are
+  model estimates, not measurements of a user's memory.
+- No studies, experts, user counts, or testimonials are fabricated. Every figure links to a
+  real, traceable source. Where evidence is weak (e.g. the 25/5 Pomodoro split), the tool says so.
+
+## Canonical pages
+- Home: https://recallo.com/
+- Tools: https://recallo.com/tools/<id>.html  (fsrs-scheduler, review-workload,
+  retention-optimizer, exam-planner, forgetting-curve, cram-vs-spaced, sm2-scheduler,
+  reading-planner, focus-blocks, interleaving)
+- Learn: https://recallo.com/learn/index.html  (spaced-repetition-explained,
+  desired-retention-guide, fsrs-vs-sm2, study-schedule-guide)
+- About: https://recallo.com/about.html
+- Privacy: https://recallo.com/privacy.html
