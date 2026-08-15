@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://recallo.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/privacy.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/learn/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/learn/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/learn/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/learn/index.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/tools/fsrs-scheduler.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/tools/fsrs-scheduler.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/fsrs-scheduler.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/fsrs-scheduler.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/tools/review-workload.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/tools/review-workload.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/review-workload.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/review-workload.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/tools/retention-optimizer.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/tools/retention-optimizer.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/retention-optimizer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/retention-optimizer.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/tools/exam-planner.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/tools/exam-planner.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/exam-planner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/exam-planner.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/tools/forgetting-curve.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/tools/forgetting-curve.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/forgetting-curve.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/forgetting-curve.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/tools/cram-vs-spaced.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/tools/cram-vs-spaced.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/cram-vs-spaced.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/cram-vs-spaced.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/tools/sm2-scheduler.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/tools/sm2-scheduler.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/sm2-scheduler.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/sm2-scheduler.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/tools/reading-planner.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/tools/reading-planner.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/reading-planner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/reading-planner.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/tools/focus-blocks.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/tools/focus-blocks.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/focus-blocks.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/focus-blocks.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/tools/interleaving.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/tools/interleaving.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/interleaving.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/interleaving.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/learn/spaced-repetition-explained.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/learn/spaced-repetition-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/learn/spaced-repetition-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/learn/spaced-repetition-explained.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/learn/desired-retention-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/learn/desired-retention-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/learn/desired-retention-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/learn/desired-retention-guide.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/learn/fsrs-vs-sm2.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/learn/fsrs-vs-sm2.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/learn/fsrs-vs-sm2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/learn/fsrs-vs-sm2.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://recallo.com/learn/study-schedule-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://recallo.com/learn/study-schedule-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://recallo.com/learn/study-schedule-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://recallo.com/learn/study-schedule-guide.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
