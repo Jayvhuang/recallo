@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interleaved Practice Generator — Shuffle Problem Types the Way Exams Do | Recallo</title>
+<meta name="description" content="Paste your topics or problem types and get an interleaved practice order that avoids long runs of the same kind, so you have to choose the method instead of being told it. Free, bilingual, client-side.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://recallo.com/tools/interleaving.html">
+<link rel="alternate" hreflang="en" href="https://recallo.com/tools/interleaving.html">
+<link rel="alternate" hreflang="zh-CN" href="https://recallo.com/tools/interleaving.html">
+<link rel="alternate" hreflang="x-default" href="https://recallo.com/tools/interleaving.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Recallo">
+<meta property="og:title" content="Interleaved practice generator — Recallo">
+<meta property="og:description" content="Paste your topics or problem types and get an interleaved practice order that avoids long runs of the same kind, so you have to choose the method instead of being told it. Free, bilingual, client-side.">
+<meta property="og:url" content="https://recallo.com/tools/interleaving.html">
+<meta property="og:image" content="https://recallo.com/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Interleaved practice generator — Recallo">
+<meta name="twitter:description" content="Paste your topics or problem types and get an interleaved practice order that avoids long runs of the same kind, so you have to choose the method instead of being told it. Free, bilingual, client-side.">
+<meta name="twitter:image" content="https://recallo.com/og-image.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense (Auto ads). Uncomment and replace the publisher ID only after the site is approved.
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","@id":"https://recallo.com/tools/interleaving.html#app","name":"Interleaved practice generator","url":"https://recallo.com/tools/interleaving.html",
+ "applicationCategory":"EducationalApplication","operatingSystem":"Any browser",
+ "description":"Paste your topics or problem types and get an interleaved practice order that avoids long runs of the same kind, so you have to choose the method instead of being told it. Free, bilingual, client-side.","inLanguage":["en","zh-CN"],
+ "isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+ "publisher":{"@type":"Organization","name":"Recallo","url":"https://recallo.com/"}},
+{"@type":"BreadcrumbList","@id":"https://recallo.com/tools/interleaving.html#crumbs","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Recallo","item":"https://recallo.com/"},
+ {"@type":"ListItem","position":2,"name":"Tools","item":"https://recallo.com/#tools"},
+ {"@type":"ListItem","position":3,"name":"Interleaved practice generator","item":"https://recallo.com/tools/interleaving.html"}]},
+{"@type":"FAQPage","@id":"https://recallo.com/tools/interleaving.html#faq","mainEntity":[
+  {"@type":"Question","name":"What is interleaved practice?","acceptedAnswer":{"@type":"Answer","text":"Rearranging a practice set so consecutive items require different methods, instead of doing all of one type before moving on. The total amount of practice is unchanged — only the order — and the change forces you to select the method rather than apply a pre-announced one."}},
+  {"@type":"Question","name":"Why does interleaving feel worse while it works better?","acceptedAnswer":{"@type":"Answer","text":"Because performance during practice and learning are not the same thing. Interleaving lowers your accuracy in the session while raising retention later, so the felt signal points the wrong way. This is why people abandon it despite the measured delayed-test advantage."}},
+  {"@type":"Question","name":"Should everything be interleaved?","acceptedAnswer":{"@type":"Answer","text":"No. When a method is brand new, a short blocked run to get the mechanics right is sensible; interleaving pays once you have more than one candidate method and the risk is confusing them. First learn the move, then practise choosing it."}}]}]}
+</script>
+</head>
+<body data-tool="interleaving">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="../index.html" aria-label="Recallo home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 22c6-14 18-14 24 0" fill="none" stroke="#3b4fd8" stroke-width="2.6" stroke-linecap="round"/><circle cx="9" cy="24" r="3" fill="#6a5cf0"/><circle cx="16" cy="15.6" r="3" fill="#3b4fd8"/><circle cx="23" cy="24" r="3" fill="#6a5cf0"/></svg>
+      <span>Recall<i>o</i></span>
+    </a>
+    <nav class="top">
+      <a href="review-workload.html"><span data-en>Workload</span><span data-zh>复习负荷</span></a>
+      <a href="fsrs-scheduler.html"><span data-en>FSRS</span><span data-zh>FSRS</span></a>
+      <a href="exam-planner.html"><span data-en>Exam plan</span><span data-zh>考期规划</span></a>
+      <a href="../learn/index.html"><span data-en>Learn</span><span data-zh>学习科学</span></a>
+      <a href="../about.html"><span data-en>About</span><span data-zh>关于</span></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-set="en" aria-pressed="true">EN</button>
+        <button type="button" data-set="zh" aria-pressed="false">中文</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Recallo</a> ›
+    <span data-en>Tools</span><span data-zh>工具</span> ›
+    <span data-en>Interleaved practice generator</span><span data-zh>交错练习生成器</span>
+  </nav>
+
+  <section class="hero tool">
+    <h1><span data-en>Interleaved practice generator</span><span data-zh>交错练习生成器</span></h1>
+    <p class="lede"><span data-en>A textbook exercise set tells you which method to use before you read the problem. Real tests do not. Paste your topics and this produces a practice order that keeps similar items apart, so choosing the method becomes part of the practice.</span><span data-zh>课后习题在你读题之前就已经告诉你该用哪个方法。真实考试不会。把你的主题贴进来，本工具会生成一个"把同类题分开"的练习顺序，让"选方法"本身成为练习的一部分。</span></p>
+  </section>
+
+  <section>
+    <div id="bench-host"></div>
+    <noscript>
+      <div class="flag warn">This calculator needs JavaScript, because all the maths runs locally in your browser instead of on a server. 本计算器需要 JavaScript：所有计算都在你的浏览器本地完成，而非服务器。</div>
+    </noscript>
+  </section>
+
+  <section>
+    <h2><span data-en>How this works</span><span data-zh>它的原理</span></h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+      <div class="card">
+        <h3><span data-en>Blocked practice hides the hardest step</span><span data-zh>按类练习掩盖了最难的一步</span></h3>
+        <p><span data-en>When twelve problems in a row need the same theorem, you never practise identifying which theorem applies. Interleaving restores that step — which is why it feels harder while you do it and pays off when the exam mixes everything.</span><span data-zh>当连续十二道题都用同一个定理，你就从未练过"判断该用哪个定理"。交错把这一步还给你——所以做的时候更难受，而在考试把所有内容混在一起时才见效。</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-en>The measured benefit grows with delay</span><span data-zh>实测优势随延迟增长</span></h3>
+        <p><span data-en>In a three-month classroom experiment with 126 seventh-graders, the same practice problems arranged in interleaved order beat blocked order with Cohen’s d = 0.42 on a test one day later and 0.79 thirty days later. The workload was identical; only the order changed.</span><span data-zh>在一项为期三个月、126 名七年级学生的课堂实验中，同样的练习题按交错顺序排列，比按类排列在一天后的测试上高出 Cohen’s d = 0.42，在三十天后高出 0.79。工作量完全相同，改变的只有顺序。</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-en>Interleave discriminable things</span><span data-zh>要交错"需要区分"的东西</span></h3>
+        <p><span data-en>The benefit comes from having to discriminate between approaches that could plausibly apply. Shuffling genuinely unrelated subjects mostly adds switching cost without that discrimination practice, so group by "things I confuse", not by timetable.</span><span data-zh>收益来自"必须在几种都可能适用的方法之间做区分"。把彼此毫无关系的科目乱洗，多半只增加切换成本，而没有那份区分练习。所以按"我容易混的东西"分组，而不是按课表。</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span data-en>Questions</span><span data-zh>常见问题</span></h2>
+    <details class="faq">
+      <summary><span data-en>What is interleaved practice?</span><span data-zh>什么是交错练习？</span></summary>
+      <p><span data-en>Rearranging a practice set so consecutive items require different methods, instead of doing all of one type before moving on. The total amount of practice is unchanged — only the order — and the change forces you to select the method rather than apply a pre-announced one.</span><span data-zh>把练习集重排，使相邻的题目需要不同的方法，而不是做完一类再换下一类。练习总量不变——只有顺序变了——而这个改变逼你自己选方法，而不是套用已被告知的那一个。</span></p>
+    </details>
+    <details class="faq">
+      <summary><span data-en>Why does interleaving feel worse while it works better?</span><span data-zh>为什么交错练着更难受、效果却更好？</span></summary>
+      <p><span data-en>Because performance during practice and learning are not the same thing. Interleaving lowers your accuracy in the session while raising retention later, so the felt signal points the wrong way. This is why people abandon it despite the measured delayed-test advantage.</span><span data-zh>因为"练习时的表现"和"学到的东西"是两件事。交错会降低当场的正确率，却提高之后的留存，于是主观信号指向反方向。这就是为什么尽管延迟测试上有实测优势，人们还是会放弃它。</span></p>
+    </details>
+    <details class="faq">
+      <summary><span data-en>Should everything be interleaved?</span><span data-zh>所有内容都该交错吗？</span></summary>
+      <p><span data-en>No. When a method is brand new, a short blocked run to get the mechanics right is sensible; interleaving pays once you have more than one candidate method and the risk is confusing them. First learn the move, then practise choosing it.</span><span data-zh>不。当一个方法刚学，先按类连做一小段把机械步骤走顺是合理的；交错的收益出现在"你已经有不止一个候选方法、风险在于混淆它们"之后。先学会这一招，再练"什么时候用它"。</span></p>
+    </details>
+  </section>
+
+  <section>
+    <h2><span data-en>Sources</span><span data-zh>来源</span></h2>
+    <p class="sub"><span data-en>Every algorithm and figure on this page is traceable to the references below. Where evidence is weak or contested, the page says so instead of rounding it up.</span><span data-zh>本页涉及的算法与数字，均可追溯到以下文献。凡证据薄弱或存在争议之处，页面会直接说明，而不是含糊带过。</span></p>
+    <ul class="refs">
+      <li>Rohrer, D., Dedrick, R. F., &amp; Stershic, S. (2015). Interleaved practice improves mathematics learning. <i>Journal of Educational Psychology</i>, 107(3), 900–908. <a href="https://doi.org/10.1037/edu0000001" target="_blank" rel="noopener">doi:10.1037/edu0000001</a> — 126 seventh-graders, 3 months; interleaved beat blocked practice with Cohen’s <i>d</i> = 0.42 (1-day test) and 0.79 (30-day test).</li>
+      <li>Taylor, K., &amp; Rohrer, D. (2010). The effect of interleaved practice. <i>Applied Cognitive Psychology</i>, 24(6), 837–848. <a href="https://doi.org/10.1002/acp.1598" target="_blank" rel="noopener">doi:10.1002/acp.1598</a></li>
+      <li>Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., &amp; Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. <i>Psychological Bulletin</i>, 132(3), 354–380. <a href="https://doi.org/10.1037/0033-2909.132.3.354" target="_blank" rel="noopener">doi:10.1037/0033-2909.132.3.354</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span data-en>Related tools</span><span data-zh>相关工具</span></h2>
+    <ul class="rel">
+      <li><a href="focus-blocks.html"><span data-en>Focus-block session planner</span><span data-zh>专注块时段规划器</span></a></li>
+      <li><a href="reading-planner.html"><span data-en>Reading speed &amp; syllabus planner</span><span data-zh>阅读速度与书单规划器</span></a></li>
+      <li><a href="exam-planner.html"><span data-en>Exam-date feasibility planner</span><span data-zh>考期可行性规划器</span></a></li>
+    </ul>
+  </section>
+
+</div>
+</main>
+<footer class="site">
+  <div class="wrap foot">
+    <div>
+      <h4>Recallo</h4>
+      <p><span data-en>Free study-planning calculators built on published memory-scheduling algorithms. Independent project, no account required, no analytics.</span>
+      <span data-zh>基于公开记忆排程算法的免费学习规划计算器。独立项目，无需注册，不做统计追踪。</span></p>
+    </div>
+    <div>
+      <h4><span data-en>Tools</span><span data-zh>工具</span></h4>
+      <ul>
+        <li><a href="fsrs-scheduler.html">FSRS interval scheduler</a></li>
+        <li><a href="review-workload.html">Review workload simulator</a></li>
+        <li><a href="retention-optimizer.html">Retention optimiser</a></li>
+        <li><a href="exam-planner.html">Exam feasibility planner</a></li>
+        <li><a href="forgetting-curve.html">Forgetting-curve plotter</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4><span data-en>More</span><span data-zh>更多</span></h4>
+      <ul>
+        <li><a href="cram-vs-spaced.html">Cram vs spaced</a></li>
+        <li><a href="sm2-scheduler.html">SM-2 calculator</a></li>
+        <li><a href="../learn/index.html"><span data-en>Learn</span><span data-zh>学习科学</span></a></li>
+        <li><a href="../about.html"><span data-en>About &amp; method</span><span data-zh>关于与方法</span></a></li>
+        <li><a href="../privacy.html"><span data-en>Privacy</span><span data-zh>隐私政策</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap disclose">
+    <p><span data-en><b>Educational tool.</b> Recallo models published scheduling algorithms; it is not medical, psychological or academic advice, and its outputs are estimates from a model rather than measurements of your memory.</span>
+    <span data-zh><b>教育用途工具。</b>Recallo 实现的是公开排程算法，不构成医学、心理或学业建议；输出是模型估算，而非对你记忆的测量。</span></p>
+    <p><span data-en>As an Amazon Associate, Recallo earns from qualifying purchases. Affiliate links, where present, are marked and never change a calculation.</span>
+    <span data-zh>作为 Amazon Associate，Recallo 可从符合条件的购买中获得佣金。若页面出现联盟链接，均会标注，且绝不影响任何计算结果。</span></p>
+    <p><span data-en><a href="https://www.amazon.com/s?k=study+planner+flashcards&tag=recallo-20" rel="sponsored nofollow noopener" target="_blank">Find study planners &amp; flashcards on Amazon</a> (Amazon Associate link — does not affect your price).</span>
+    <span data-zh><a href="https://www.amazon.com/s?k=study+planner+flashcards&tag=recallo-20" rel="sponsored nofollow noopener" target="_blank">在 Amazon 上找学习计划本与记忆卡</a>（Amazon Associate 链接——不影响你的价格）。</span></p>
+    <p>© 2026 Recallo · <a href="../privacy.html"><span data-en>Privacy</span><span data-zh>隐私政策</span></a> · <a href="../about.html"><span data-en>About</span><span data-zh>关于</span></a></p>
+  </div>
+</footer>
+
+<script src="../engine.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>
